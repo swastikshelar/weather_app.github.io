@@ -1,0 +1,22 @@
+
+
+.card-body{
+    background: url()  cover ;
+    /* max-width: 100%; */
+
+}
+
+.card-header h4{
+   }
+
+   .temp{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1%;
+    font-size: 1.5rem;
+   }
+
+ .container{
+    font-family: 'Josefin Sans', sans-serif;
+ }

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  City
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"> Navi Mumbai</a></li>
+                  <li><a class="dropdown-item" href="#">Delhi</a></li>
+                  <li><a class="dropdown-item" href="#">Banglore</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Usage info</a>
+              </li>
+            </ul>-->
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div> 
+        </div>
+      </nav>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+      <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Temprature</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+                    <div class="temp">
+                      <span id="temp"></span> 
+                      <p> &#8451;</p> 
+                    </div>
+
+                    <!-- <ul class="list-unstyled mt-3 mb-4">
+                      <li>Temprature is <span id="temp"></span></li> -->
+                      <!-- <li> <span id="temp"></span></li> -->
+                      <!-- <li> Min Temprature is <span id="min_temp"></span></li>
+                      <li>Max Temprature is <span id="max_temp"></span></li> -->
+
+                      <!-- <li>Temprature is <span id="temp"></span></li> 
+                    </ul> -->
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Min Temprature</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+                    <div class="temp">
+                      <span id="min_temp"></span> 
+                      <p> &#8451;</p> 
+                    </div>
+
+                    <!-- <ul class="list-unstyled mt-3 mb-4"> -->
+                      <!-- <li>Temprature is <span id="temp"></span></li> -->
+                      <!-- <li>Temprature is <span id="temp"></span></li> -->
+                      <!-- <li>  <span id="min_temp"> </span></li> -->
+                      <!-- <li>Max Temprature is <span id="max_temp"></span></li> -->
+
+                      <!-- <li>Temprature is <span id="temp"></span></li> -->
+                    <!-- </ul> -->
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Max Temprature</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+                    <div class="temp">
+                      <span id="max_temp"></span> 
+                      <p> &#8451;</p> 
+                    </div>
+
+                    <!-- <ul class="list-unstyled mt-3 mb-4"> -->
+                      <!-- <li>Temprature is <span id="temp"></span></li> -->
+                      <!-- <li>Temprature is <span id="temp"></span></li>
+                      <li> Min Temprature is <span id="min_temp"></span></li> -->
+                      <!-- <li>  </li> -->
+
+                      <!-- <li>Temprature is <span id="temp"></span></li> -->
+                    <!-- </ul> -->
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                  </div>
+                </div>
+              </div>
+
+    
+
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Humidity</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Humidity is <span id="humidity"></span> %</li>
+                      <!-- <li>Cloud PCT  is <span id="cloud_pct"></span></li> -->
+                      <li>Feels like <span id="feels_like"></span></li>
+                      <!-- <li>Temprature is <span id="temp"></span></li> -->
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <!-- <div class="card mb-4 rounded-3 shadow-sm border-primary"> -->
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <!-- <div class="card-header py-3 text-bg-primary border-primary"> -->
+                  <div class="card-header py-3 ">
+                    <h4 class="my-0 fw-normal">Wind</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Wind speed is <span id="wind_speed"></span></li>
+                      <li> Wind degree is <span id="wind_degrees"></span></li>
+
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <!-- <div class="card mb-4 rounded-3 shadow-sm border-primary"> -->
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <!-- <div class="card-header py-3 text-bg-primary border-primary"> -->
+                  <div class="card-header py-3 ">
+                    <h4 class="my-0 fw-normal">Sun</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+
+                      <li>Sunrise at <span id="sunrise"></span></li>
+                      <li>Sunset at <span id="sunset"></span></li>
+                    </ul>
+                    <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <!-- <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr> 
+                    <th style="width: 34%;"></th>
+                    <th style="width: 22%;">Cloud_pct</th>
+                    <th style="width: 22%;">Feels_like</th>
+                    <th style="width: 22%;">Humidity</th>
+                    <th style="width: 22%;">Max_temp</th>
+                    <th style="width: 22%;">Min_temp</th>
+                    <th style="width: 22%;">Sunrire</th>
+                    <th style="width: 22%;">Sunset</th>
+                    <th style="width: 22%;">Temp</th>
+                    <th style="width: 22%;">Wind_degree</th>
+                    <th style="width: 22%;">Wind_speed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">Pune</th>
+                    
+                    <td><span id="cloud_pct"></span></td>
+                    <td><span id="feels_like"></span></td>
+                    <td> <span id="humidity"></span></td>
+                    <td><span id="max_temp"></span></td>
+                    <td><span id="min_temp"></span></td>
+                    <td><span id="sunrise"></span></td>
+                    <td><span id="sunset"></span></td>
+                    <td><span id="temp"></span></td>
+                    <td>g<span id="wind_degrees"></span></td>
+                    <td><span id="wind_speed"></span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">kolkata</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                  </tr>
+                </tbody>
+        
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-start">chennai</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-start">Sharing</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+          </main>
+      </div>
+
+
+      <div class="flex font-sans">
+        <div class="flex-none w-48 relative">
+          <img src="/classic-utility-jacket.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        </div>
+        <form class="flex-auto p-6">
+          <div class="flex flex-wrap">
+            <h1 class="flex-auto text-lg font-semibold text-slate-900">
+              Classic Utility Jacket
+            </h1>
+            <div class="text-lg font-semibold text-slate-500">
+              $110.00
+            </div>
+            <div class="w-full flex-none text-sm font-medium text-slate-700 mt-2">
+              In stock
+            </div>
+          </div>
+          <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+            <div class="space-x-2 flex text-sm">
+              <label>
+                <input class="sr-only peer" name="size" type="radio" value="xs" checked />
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                  XS
+                </div>
+              </label>
+              <label>
+                <input class="sr-only peer" name="size" type="radio" value="s" />
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                  S
+                </div>
+              </label>
+              <label>
+                <input class="sr-only peer" name="size" type="radio" value="m" />
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                  M
+                </div>
+              </label>
+              <label>
+                <input class="sr-only peer" name="size" type="radio" value="l" />
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                  L
+                </div>
+              </label>
+              <label>
+                <input class="sr-only peer" name="size" type="radio" value="xl" />
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white">
+                  XL
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="flex space-x-4 mb-6 text-sm font-medium">
+            <div class="flex-auto flex space-x-4">
+              <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
+                Buy now
+              </button>
+              <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+                Add to bag
+              </button>
+            </div>
+            <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
+              <svg width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+              </svg>
+            </button>
+          </div>
+          <p class="text-sm text-slate-700">
+            Free shipping on all continental US orders.
+          </p>
+        </form>
+      </div> -->
+  <script src="script.js"></script>
+
+</body>
+</html>
